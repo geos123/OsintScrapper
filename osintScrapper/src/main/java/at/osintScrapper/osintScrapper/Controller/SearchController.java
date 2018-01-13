@@ -9,6 +9,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/**
+ * Search Controller
+ * Searches the specified url, and gives back a list of profiles  
+ *  
+ */
+
 public class SearchController {
 	
 	private WebDriver driver;
@@ -17,7 +23,6 @@ public class SearchController {
 	public SearchController(WebDriver driver) {
 		this.setDriver(driver);
 	}
-
 	
 	public List<String> searchProfileList(String searchString) {
 		driver.get(searchString);
@@ -44,22 +49,14 @@ public class SearchController {
 			}
 
 			list = driver.findElements(By.className("_32mo"));
-
 		}
-
-		System.out.println(list.size());
 
 		for (int i = 0; i < list.size(); i++) {
 			WebElement element = list.get(i);
 			profileList.add(element.getAttribute("href"));
 		}
 
-		for (String s : profileList) {
-			System.out.println(s);
-		}
-		
-		return profileList;
-		
+		return profileList;		
 	}
 	
 	public void setDriver(WebDriver driver) {
@@ -68,5 +65,4 @@ public class SearchController {
 		}
 		this.driver = driver;
 	}
-
 }

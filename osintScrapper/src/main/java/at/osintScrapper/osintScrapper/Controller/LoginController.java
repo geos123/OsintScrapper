@@ -5,6 +5,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+/**
+ * Controlling the login
+ *  
+ */
+
 public class LoginController {
 	
 	private WebDriver driver;
@@ -16,8 +21,7 @@ public class LoginController {
 		this.setDriver(driver);		
 	}
 	
-	public void login(String email, String password) {
-		
+	public void login(String email, String password) {		
 		driver.get(FACEBOOK_URL);
 		driver.manage().window().maximize();
 		WebElement emailElement = driver.findElement(By.id(EMAIL_ID));
@@ -26,7 +30,6 @@ public class LoginController {
 		emailElement.clear();
 		emailElement.sendKeys(email);
 		passwordElement.sendKeys(password);
-
 		passwordElement.sendKeys(Keys.RETURN);		
 	}
 
@@ -37,5 +40,4 @@ public class LoginController {
 		
 		this.driver = driver;
 	}
-
 }
