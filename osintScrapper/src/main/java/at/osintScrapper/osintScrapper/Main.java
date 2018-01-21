@@ -14,6 +14,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import at.osintScrapper.osintScrapper.Controller.LoginController;
 import at.osintScrapper.osintScrapper.Controller.SearchController;
 import at.osintScrapper.osintScrapper.Controller.Selector;
+import at.osintScrapper.osintScrapper.model.ProfilePage;
 import at.osintScrapper.osintScrapper.model.ScrappingMode;
 
 /**
@@ -65,11 +66,28 @@ public class Main {
 		LoginController loginController = new LoginController(driver);
 		loginController.login(email, password);
 		
+	
 		System.out.println("Searching for profiles...");
 		SearchController searchController = new SearchController(driver);
 		List<String> profiles = searchController.searchProfileList("https://www.facebook.com/search/str/wollsdorf%20leder/pages-named/employees/present/intersect");
 		
 		System.out.println(profiles.size() + " Profiles found");
+		
+		System.out.println("Fetching profiles...");
+		
+		
+		
+		for(String profileURLString : profiles) {
+			System.out.println(profileURLString);
+			ProfilePage p = new ProfilePage(driver, profileURLString);
+			System.out.println(p.getName());
+			System.out.println(p.getPartnerName());
+			System.out.println(p.getEducation());
+			System.out.println(p.getLivingPlace());
+			System.out.println(p.getWorkplace());
+
+		}
+		
 		
 		driver.manage().deleteAllCookies();
 		driver.close();

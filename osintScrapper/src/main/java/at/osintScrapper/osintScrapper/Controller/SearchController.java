@@ -42,7 +42,8 @@ public class SearchController {
 			jse.executeScript("window.scrollBy(0,1400)", "");
 
 			try {
-				Thread.sleep(3000);
+				Thread.sleep(1000);
+				//Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
