@@ -14,7 +14,7 @@ public class ProfilePage {
 		this.setDriver(driver);
 		this.setAddress(address);
 
-		this.openProfilePage();
+		//this.openProfilePage();
 	}
 
 	private void openProfilePage() {
@@ -29,7 +29,7 @@ public class ProfilePage {
 	}
 
 	public String getPartnerName() {
-		driver.get(this.getAboutAddress());
+		//driver.get(this.getAboutAddress());
 
 		try {
 			WebElement partnerWebElement = driver.findElement(By.xpath("//*[@id='contentArea']/div/div[2]/div/div/div/div[2]/div/ul/li[2]/div/div[2]/div/div/div/ul/li[4]/div/div/div/div/div/a"));
@@ -45,7 +45,7 @@ public class ProfilePage {
 	public String getEducation() {
 		
 		//toDo
-		driver.get(this.getAboutAddress());
+		//driver.get(this.getAboutAddress());
 		try {
 			WebElement educationWebElement = driver.findElement(By.xpath("//*[@id='contentArea']/div/div[2]/div/div/div/div[2]/div/ul/li[2]/div/div[2]/div/div/div/ul/li[2]/div/div/div/div/a"));
 			return educationWebElement.getText();
@@ -60,7 +60,7 @@ public class ProfilePage {
 	
 	public String getLivingPlace() {		
 		//toDo
-		driver.get(this.getAboutAddress());
+		//driver.get(this.getAboutAddress());
 		try {
 			WebElement livingPlaceWebElement = driver.findElement(By.xpath("//*[@id='contentArea']/div/div[2]/div/div/div/div[2]/div/ul/li[2]/div/div[2]/div/div/div/ul/li[3]/div/div/div/div/a"));
 			return livingPlaceWebElement.getText();
@@ -74,7 +74,7 @@ public class ProfilePage {
 
 	public String getWorkplace() {		
 		//toDo
-		driver.get(this.getAboutAddress());
+		//driver.get(this.getAboutAddress());
 		try {
 			WebElement workplaceWebElement = driver.findElement(By.xpath("//*[@id='contentArea']/div/div[2]/div/div/div/div[2]/div/ul/li[2]/div/div[2]/div/div/div/ul/li[1]/div/div/div/div/a"));
 			return workplaceWebElement.getText();

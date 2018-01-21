@@ -12,8 +12,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import at.osintScrapper.osintScrapper.Controller.LoginController;
+import at.osintScrapper.osintScrapper.Controller.ProfileController;
 import at.osintScrapper.osintScrapper.Controller.SearchController;
 import at.osintScrapper.osintScrapper.Controller.Selector;
+import at.osintScrapper.osintScrapper.model.Person;
 import at.osintScrapper.osintScrapper.model.ProfilePage;
 import at.osintScrapper.osintScrapper.model.ScrappingMode;
 
@@ -79,12 +81,16 @@ public class Main {
 		
 		for(String profileURLString : profiles) {
 			System.out.println(profileURLString);
-			ProfilePage p = new ProfilePage(driver, profileURLString);
+			/*ProfilePage p = new ProfilePage(driver, profileURLString);
 			System.out.println(p.getName());
 			System.out.println(p.getPartnerName());
 			System.out.println(p.getEducation());
 			System.out.println(p.getLivingPlace());
-			System.out.println(p.getWorkplace());
+			System.out.println(p.getWorkplace());*/
+			
+			ProfileController profileController = new ProfileController(driver, profileURLString);
+			Person p = profileController.createPerson();
+			System.out.println(p);
 
 		}
 		
