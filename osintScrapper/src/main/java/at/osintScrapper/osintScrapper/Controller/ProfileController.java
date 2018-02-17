@@ -1,5 +1,7 @@
 package at.osintScrapper.osintScrapper.Controller;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
 import at.osintScrapper.osintScrapper.model.Person;
@@ -28,6 +30,23 @@ public class ProfileController {
 		person.setEducation(profilePage.getEducation());
 		person.setWorkPlace(profilePage.getWorkplace());
 		person.setLivingPlace(profilePage.getLivingPlace());
+		
+		List<String> musicArtists = profilePage.getMusic();
+		
+		if(musicArtists != null) {
+			for(String artist : musicArtists) {
+				person.addMusicArtist(artist);
+			}
+		}
+		
+		
+		List<String> friends = profilePage.getFriends();
+		
+		if(friends != null) {
+			for(String friend : friends) {
+				person.addFriend(friend);
+			}
+		}
 		
 		
 		return person;

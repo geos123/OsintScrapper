@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -65,6 +66,10 @@ public class Main {
 		
 		WebDriver driver = new ChromeDriver(chromeOptions);
 		
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+		
+		
+		
 		LoginController loginController = new LoginController(driver);
 		loginController.login(email, password);
 		
@@ -81,12 +86,7 @@ public class Main {
 		
 		for(String profileURLString : profiles) {
 			System.out.println(profileURLString);
-			/*ProfilePage p = new ProfilePage(driver, profileURLString);
-			System.out.println(p.getName());
-			System.out.println(p.getPartnerName());
-			System.out.println(p.getEducation());
-			System.out.println(p.getLivingPlace());
-			System.out.println(p.getWorkplace());*/
+			
 			
 			ProfileController profileController = new ProfileController(driver, profileURLString);
 			Person p = profileController.createPerson();
