@@ -9,7 +9,7 @@ import at.osintScrapper.osintScrapper.model.ScrappingMode;
  *  
  */
 
-public class Selector {
+public class ModeSelector {
 
 	public ScrappingMode selectMode() {
 		Scanner keyboardScanner = new Scanner(System.in);

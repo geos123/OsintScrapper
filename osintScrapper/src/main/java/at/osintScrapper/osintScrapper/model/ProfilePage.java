@@ -69,7 +69,7 @@ public class ProfilePage {
 			WebElement workplaceWebElement = driver.findElement(By.xpath(WORKPLACE_XPATH));
 			return workplaceWebElement.getText();
 		} catch (NoSuchElementException e) {
-			System.out.println("No living place found at " + this.address);
+			System.out.println("No working place found at " + this.address);
 		}
 		
 		return null;
