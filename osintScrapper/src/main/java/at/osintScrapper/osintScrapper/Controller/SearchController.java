@@ -33,7 +33,6 @@ public class SearchController {
 		int currentElementCounter = -1;
 
 		while (currentElementCounter < list.size()) {
-			System.out.println("loop");
 			currentElementCounter = list.size();
 
 			driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
@@ -42,7 +41,7 @@ public class SearchController {
 			jse.executeScript("window.scrollBy(0,1400)", "");
 
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(2000);
 				//Thread.sleep(3000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block

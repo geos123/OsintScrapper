@@ -60,7 +60,7 @@ public class Main {
 
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("user-data-dir=D:\\FH\\2_IMS\\Drive\\3. Semester\\Projektarbeit\\workspace\\chromeProfile");
-		//chromeOptions.addArguments("--headless");
+		chromeOptions.addArguments("--headless");
 
 		System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 		
@@ -85,8 +85,6 @@ public class Main {
 			
 		}
 		
-		
-		//https://www.facebook.com/search/str/gerald%20oswald/users-named/intersect
 		
 		WebDriver driver = new ChromeDriver(chromeOptions);
 		driver.manage().deleteAllCookies();
